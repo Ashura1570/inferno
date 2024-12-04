@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <base href="." />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>TechDonation - Inclusão Digital</title>
+    
+    </head>
+    <body>
+      <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+            </svg>
+            TechDonation
+          </div>
+          <a href="https://example.com/login" class="submit-btn" style="width: auto;">Login</a>
+        </nav>
+      </header>
+    
+      <section class="hero">
+        <h1>Inclusão Digital para Todos</h1>
+        <p>Ajude a transformar vidas através da tecnologia. Sua doação contribui para fornecer equipamentos, cursos e oportunidades digitais para quem mais precisa.</p>
+      </section>
+    
+      <div class="impact-cards">
+        <div class="impact-card">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 16V4H3v12h18zm0-14c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-7v2h2v2H8v-2h2v-2H3c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h18z"/>
+          </svg>
+          <h3>Computadores</h3>
+          <p>Doamos equipamentos para estudantes e comunidades carentes</p>
+        </div>
+        <div class="impact-card">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/>
+          </svg>
+          <h3>Educação</h3>
+          <p>Oferecemos cursos de programação e tecnologia</p>
+        </div>
+        <div class="impact-card">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+          <h3>Comunidade</h3>
+          <p>Construímos uma rede de suporte e mentoria</p>
+        </div>
+      </div>
+    
+      <main class="donation-form">
+        <h2>Faça sua doação</h2>
+        <p style="margin: 1rem 0">Escolha como quer ajudar a democratizar o acesso à tecnologia</p>
+        
+        <form id="donationForm" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label>Escolha o valor da doação</label>
+            <div class="amount-options">
+              <button type="button" class="amount-btn" data-amount="100">R$ 100</button>
+              <button type="button" class="amount-btn" data-amount="250">R$ 250</button>
+              <button type="button" class="amount-btn" data-amount="500">R$ 500</button>
+            </div>
+            <input type="number" class="form-control" placeholder="Outro valor" id="customAmount">
+          </div>
+    
+          <div class="form-group">
+            <label>Forma de Pagamento</label>
+            <div class="payment-methods">
+              <div class="payment-method" data-method="credit">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                </svg>
+                <p>Cartão de Crédito</p>
+              </div>
+              <div class="payment-method" data-method="pix">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                <p>PIX</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" required>
+          </div>
+    
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" class="form-control" required>
+          </div>
+    
+          <div class="form-group">
+            <label>CPF</label>
+            <input type="text" class="form-control" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+          </div>
+    
+          <button type="submit" class="submit-btn">Doar Agora</button>
+        </form>
+      </main>
+    
+    
+    <script src="script.js"></script>
+    </body></html>
+    
+    
+    
+    
